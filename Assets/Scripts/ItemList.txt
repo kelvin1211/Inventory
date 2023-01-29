@@ -1,0 +1,2 @@
+Item	Ox	도끼	1	FALSE
+Item	Knife	칼	1	FALSE
