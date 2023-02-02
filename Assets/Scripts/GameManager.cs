@@ -150,8 +150,8 @@ public class GameManager : MonoBehaviour
     //Area
     Button ZoomArea_A;
 
-    public TextMeshProUGUI myText_item;
-    public TextMeshProUGUI myText_discription;
+    //public TextMeshProUGUI myText_item;
+    //public TextMeshProUGUI myText_discription;
 
 
     //save
@@ -190,11 +190,11 @@ public class GameManager : MonoBehaviour
         }
         #endregion
 
-        LoadComponents();
+        //LoadComponents();
         Debug.Log("gm loadcomponent===");
-        ClickArrowEvent();
+        //ClickArrowEvent();
         Debug.Log("gm Clickevent===");
-        StartCoroutine(FadeIn());
+        //StartCoroutine(FadeIn());
 
 
         //Debug.Log("roomName_Raycast====" + myRay.roomName_Raycast);
@@ -215,7 +215,7 @@ public class GameManager : MonoBehaviour
             AllItemList.Add(new Item(row[0], row[1], row[2], row[3], row[4] == "TRUE"));
 
         }*/
-        myText_discription.text = "게임 완성후 초기화해주세요";
+        //myText_discription.text = "게임 완성후 초기화해주세요";
 
     }
 
@@ -266,11 +266,11 @@ public class GameManager : MonoBehaviour
         //Audio
         TheAudio = AssetAssist.FindComponent<AudioSource>("GameManager");
 
-        //TextMesh
-        myText_item = AssetAssist.FindComponent<TextMeshProUGUI>("Text_item",parent);
-        myText_discription = AssetAssist.FindComponent<TextMeshProUGUI>("Text_discription", parent);
-        myText_item.text = "";
-        myText_discription.text = "";
+        ////TextMesh
+        //myText_item = AssetAssist.FindComponent<TextMeshProUGUI>("Text_item",parent);
+        //myText_discription = AssetAssist.FindComponent<TextMeshProUGUI>("Text_discription", parent);
+        //myText_item.text = "";
+        //myText_discription.text = "";
 
         //저장경로
         path = Application.persistentDataPath + "/Save";
@@ -369,11 +369,11 @@ public class GameManager : MonoBehaviour
         float increment = smoothness / duration; //The amount of change to apply.
         while (progress < 1)
         {
-            myText_discription.color = Color.Lerp(myText_discription.color, Color.clear, progress);
+            myInven. myText_discription().color = Color.Lerp(myInven.myText_discription().color, Color.clear, progress);
             progress += increment;
             yield return new WaitForSeconds(smoothness);
         }
-        myText_discription.text = "";
+        myInven.myText_discription().text = "";
         yield return true;
     }
 

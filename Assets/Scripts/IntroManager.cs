@@ -97,6 +97,7 @@ namespace Kelvin
             {
                 yield return null;
             }
+            Destroy(gameObject);
         }
 
         //씬이 로드된 이후 저장된 데이터 로드

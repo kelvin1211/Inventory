@@ -123,6 +123,11 @@ namespace Kelvin
         public bool isGetKey;
 
 
+        TextMeshProUGUI _myText_item;
+        public TextMeshProUGUI textMesh_() { return _myText_item; }
+        TextMeshProUGUI _myText_discription;
+        public TextMeshProUGUI myText_discription() { return _myText_discription; }
+
 
         //«ˆ¿Á æ¿
         string CurrentScene;
@@ -154,6 +159,9 @@ namespace Kelvin
         private void Start()
         {
             GameManager.instance.LoadComponents();
+
+            _myText_discription.text = "∞‘¿” øœº∫»ƒ √ ±‚»≠«ÿ¡÷ººø‰";
+
             ItemClickEvent();
             areaClickEvent();
             StartCoroutine(GameManager.instance.FadeIn());
@@ -218,7 +226,11 @@ namespace Kelvin
             J_key.localPosition = new Vector3(1, 1, 0);
 
 
-
+            //TextMesh
+            _myText_item = AssetAssist.FindComponent<TextMeshProUGUI>("Text_item", parent);
+            _myText_discription = AssetAssist.FindComponent<TextMeshProUGUI>("Text_discription", parent);
+            _myText_item.text = "";
+            _myText_discription.text = "";
 
 
             //¿Œ∫•¿« æ∆¿Ã≈€ΩΩ∑‘ ∏ﬁ∏∏Æ«“¥Á
@@ -501,7 +513,7 @@ namespace Kelvin
                 cb.normalColor = UnselectedColor;
                 cb.selectedColor = UnselectedColor;
                 _toggle.colors = cb;
-                GameManager.instance.myText_item.text = "";
+                _myText_item.text = "";
             }
         }
         public void CheckingSelected(int _slotNum)
@@ -520,7 +532,7 @@ namespace Kelvin
                 Debug.Log("Index======" + index);
                 if (toggleSpriteName == "Knife")
                 {
-                    GameManager.instance.myText_item.text = "ƒÆ";
+                    _myText_item.text = "ƒÆ";
                     Debug.Log("toggleSpriteName====" + toggleSpriteName);
                     isKnifeSelected = true;
                     
@@ -529,12 +541,12 @@ namespace Kelvin
                 else if (toggleSpriteName == "Ox")
                 {
                     isOxSelected = true;
-                    GameManager.instance.myText_item.text = "µµ≥¢";
+                    _myText_item.text = "µµ≥¢";
                 }
                 else if (toggleSpriteName == "key_inven")
                 {
                     isKeySelected = true;
-                    GameManager.instance.myText_item.text = "ø≠ºË";
+                    _myText_item.text = "ø≠ºË";
                 }
                 else
                 {
