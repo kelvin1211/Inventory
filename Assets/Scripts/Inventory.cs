@@ -156,8 +156,9 @@ namespace Kelvin
             GameManager.instance.LoadComponents();
             ItemClickEvent();
             areaClickEvent();
-
-             //= mySaveData._currentStage;
+            StartCoroutine(GameManager.instance.FadeIn());
+            GameManager.instance.ClickArrowEvent();
+            //= mySaveData._currentStage;
 
 
             Debug.Log("invent CurrentScene==" + CurrentScene);
@@ -239,7 +240,10 @@ namespace Kelvin
             ZoomArea = AssetAssist.FindComponent<Button>("ZoomIn", parent);
         }
 
-
+        public void testLoadscene()
+        {
+            SceneManager.LoadScene(0);
+        }
         public void LoadToInvent(int _arrayNum, string _itemName, int _itemCount)
         {
             for (int i = 0; i < items.Length; i++)

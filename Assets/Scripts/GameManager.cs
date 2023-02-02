@@ -315,10 +315,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void testLoadscene()
-    {
-        SceneManager.LoadScene(0);
-    }
+    
 
     // 씬이 로드될 때 Fade in
     public IEnumerator FadeIn()
@@ -620,7 +617,7 @@ public class GameManager : MonoBehaviour
 
     
     // Room 이동 방향버튼 이벤트
-    void ClickArrowEvent()
+    public void ClickArrowEvent()
     {
         LeftArrow.onClick.AddListener(() =>
         {

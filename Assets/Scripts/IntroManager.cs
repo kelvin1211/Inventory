@@ -37,7 +37,8 @@ namespace Kelvin
                 Destroy(this);
             }
 
-            thehSaveNLoad = new SaveNLoad();
+
+            thehSaveNLoad = FindObjectOfType<SaveNLoad>();
             thehSaveDataList = new SaveDataList();
             theInvent = new Inventory();
 
